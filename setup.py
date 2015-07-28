@@ -1,6 +1,6 @@
 from setuptools import setup
 
-DESCRIPTION = "A Django oriented templated / transaction email abstraction"
+DESCRIPTION = "Pebble's fork of a Django oriented templated / transaction email abstraction"
 
 LONG_DESCRIPTION = None
 try:
@@ -19,12 +19,12 @@ CLASSIFIERS = [
 ]
 
 setup(
-    name='django-templated-email',
-    version='0.4.9',
+    name='django-templated-email-pebble',
+    version='0.5.0',
     packages=['templated_email', 'templated_email.backends'],
-    author='Bradley Whittington',
-    author_email='radbrad182@gmail.com',
-    url='http://github.com/bradwhittington/django-templated-email/',
+    author='SF Software limited t/a Pebble',
+    author_email='sysadmin@talktopebble.co.uk',
+    url='http://github.com/mypebble/django-templated-email/',
     license='MIT',
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,

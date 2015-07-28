@@ -7,11 +7,15 @@ Django-Templated-Email
 
 Overview
 =================
-django-templated-email is oriented towards sending templated emails 
-intended for use with transactional mailers (with support for MailchimpSTS, 
-and PostageApp), but as a default with a backend class which uses django's 
-templating system, and django's core.mail functions. The library supports 
-template inheritence, adding cc'd and bcc'd recipients, configurable 
+
+This is a fork of django-templated-email so we can keep a version in pypi
+which works with the latest version of Django.
+
+django-templated-email is oriented towards sending templated emails
+intended for use with transactional mailers (with support for MailchimpSTS,
+and PostageApp), but as a default with a backend class which uses django's
+templating system, and django's core.mail functions. The library supports
+template inheritence, adding cc'd and bcc'd recipients, configurable
 template naming and location, with easy switching between backends/providers.
 
 The send_templated_email method can be thought of as the render_to_response
@@ -33,7 +37,7 @@ You can add the following to your settings.py (but it works out the box)::
 
     # You can also use a class directly
     from templated_email.backends.vanilla_django import TemplateBackend
-    TEMPLATED_EMAIL_BACKEND = TemplateBackend 
+    TEMPLATED_EMAIL_BACKEND = TemplateBackend
 
 
 Sending templated emails
@@ -92,7 +96,7 @@ The backend will look in *my_app/templates/templated_email/welcome.email* ::
 
     {% block subject %}My subject for {{username}}{% endblock %}
     {% block plain %}
-      Hi {{full_name}}, 
+      Hi {{full_name}},
 
       You just signed up for my website, using:
           username: {{username}}
@@ -130,7 +134,7 @@ There is very basic support for template inheritence (using **{% extends ... %}*
 Legacy Behaviour
 ----------------
 
-The 0.2.x version of the library looked in django template directories/loaders 
+The 0.2.x version of the library looked in django template directories/loaders
 for **templated_email/welcome.txt** ::
 
     Hey {{full_name}},
@@ -141,8 +145,8 @@ for **templated_email/welcome.txt** ::
 
     Thanks, you rock!
 
-It will use **templated_email/welcome.html** for the html part 
-of the email allowing you to make it so much pretty. 
+It will use **templated_email/welcome.html** for the html part
+of the email allowing you to make it so much pretty.
 
 Future Plans
 ------------
@@ -227,7 +231,7 @@ And add the following to your settings.py::
     }
 
 The Mailchimp STS sender uses the same template processor as the VanillaDjango backend, so you can override the following settings globally::
-    
+
     TEMPLATED_EMAIL_TEMPLATE_DIR = 'templated_email/' #use '' for top level template dir
     TEMPLATED_EMAIL_FILE_EXTENSION = 'email'
 
