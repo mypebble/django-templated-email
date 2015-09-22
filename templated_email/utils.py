@@ -9,7 +9,7 @@ class BlockNotFound(Exception):
 
 
 def _iter_nodes(template, context, name, block_lookups):
-    for node in template:
+    for node in template.template.nodelist:
         if isinstance(node, BlockNode) and node.name == name:
             # Rudimentary handling of extended templates, for issue #3
             for i in xrange(len(node.nodelist)):
@@ -18,7 +18,9 @@ def _iter_nodes(template, context, name, block_lookups):
                     node.nodelist[i] = block_lookups[n.name]
             return node.render(context)
         elif isinstance(node, ExtendsNode):
-            lookups = dict([(n.name, n) for n in node.nodelist if isinstance(n, BlockNode)])
+            lookups = {
+                n.name: n for n in node.nodelist if isinstance(n, BlockNode)
+            }
             lookups.update(block_lookups)
             return _get_node(node.get_parent(context), context, name, lookups)
 
