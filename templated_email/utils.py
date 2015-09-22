@@ -16,6 +16,7 @@ def _iter_nodes(template, context, name, block_lookups):
                 n = node.nodelist[i]
                 if isinstance(n, BlockNode) and n.name in block_lookups:
                     node.nodelist[i] = block_lookups[n.name]
+            context.template = template.template
             return node.render(context)
         elif isinstance(node, ExtendsNode):
             lookups = {
