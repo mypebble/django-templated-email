@@ -20,7 +20,7 @@ CLASSIFIERS = [
 
 setup(
     name='django-templated-email-pebble',
-    version='0.6.0',
+    version='2.0.0',
     packages=['templated_email', 'templated_email.backends'],
     author='SF Software limited t/a Pebble',
     author_email='sysadmin@talktopebble.co.uk',
@@ -30,4 +30,7 @@ setup(
     long_description=LONG_DESCRIPTION,
     platforms=['any'],
     classifiers=CLASSIFIERS,
+    install_requires=[
+        'six',
+    ]
 )
