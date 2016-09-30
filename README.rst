@@ -122,7 +122,7 @@ If you want to include an HTML part to your emails, simply use the 'html' block 
 
 You can globally override the template dir, and file extension using the following variables in settings.py ::
 
-    TEMPLATED_EMAIL_TEMPLATE_DIR = 'templated_email/' #use '' for top level template dir, ensure there is a trailing slash
+    TEMPLATED_EMAIL_TEMPLATE_DIR = 'templated_email/'  # use '' for top level template dir, ensure there is a trailing slash
     TEMPLATED_EMAIL_FILE_EXTENSION = 'email'
 
 For the **vanilla_django** and **mailchimp_sts** backends you can set a value for **template_prefix** and **template_suffix** (or use the less backend-portable **template_dir** / **file_extension**) for every time you call **send_templated_mail**, if you wish to store a set of templates in a different directory. Remember to include a trailing slash.
@@ -170,7 +170,7 @@ Using vanilla_django:
 
 This is the default backend, and as such requires no special configuration, and will work out of the box. By default it assumes the following settings (should you wish to override them)::
 
-    TEMPLATED_EMAIL_TEMPLATE_DIR = 'templated_email/' #Use '' for top level template dir
+    TEMPLATED_EMAIL_TEMPLATE_DIR = 'templated_email/'  # Use '' for top level template dir
     TEMPLATED_EMAIL_FILE_EXTENSION = 'email'
 
 For legacy purposes you can specify email subjects in your settings file (but, the preferred method is to use a **{% block subject %}** in your template)::
@@ -203,7 +203,7 @@ And add the following to your settings.py::
 
     POSTAGEAPP_API_KEY = 'yourapikey'
 
-    #If you are already using django-postageapp:
+    # If you are already using django-postageapp:
 
     EMAIL_POSTAGEAPP_API_KEY = POSTAGEAPP_API_KEY
 
